@@ -1,0 +1,4 @@
+SSH_AUTH_FAILED Authentication failure for (?:%{USERNAME:username}) from (?:%{IPV4:src_ipv4})
+SSH_INVALID_USER Invalid user (?:%{USERNAME:username}) from (?:%{IPV4:src_ipv4})
+SSH_ACCEPTED_AUTH Accepted (?:%{AUTHN:authnmethod}) for (?:%{USERNAME:username}) from (?:%{IPV4:src_ipv4})
+SSH_ACCEPTED_KEY Accepted publickey for (?:%{USERNAME:username}) from (?:%{IPV4:src_ipv4})

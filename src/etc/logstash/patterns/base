@@ -1,0 +1,26 @@
+# Months: January, Feb, 3, 03, 12, December
+MONTH \b(?:[Jj]an(?:uary|uar)?|[Ff]eb(?:ruary|ruar)?|[Mm](?:a|ä)?r(?:ch|z)?|[Aa]pr(?:il)?|[Mm]a(?:y|i)?|[Jj]un(?:e|i)?|[Jj]ul(?:y)?|[Aa]ug(?:ust)?|[Ss]ep(?:tember)?|[Oo](?:c|k)?t(?:ober)?|[Nn]ov(?:ember)?|[Dd]e(?:c|z)(?:ember)?)\b
+MONTHNUM (?:0?[1-9]|1[0-2])
+MONTHNUM2 (?:0[1-9]|1[0-2])
+MONTHDAY (?:(?:0[1-9])|(?:[12][0-9])|(?:3[01])|[1-9])
+
+# Days: Monday, Tue, Thu, etc...
+DAY (?:Mon(?:day)?|Tue(?:sday)?|Wed(?:nesday)?|Thu(?:rsday)?|Fri(?:day)?|Sat(?:urday)?|Sun(?:day)?)
+
+# Years
+YEAR (?>\d\d){1,2}
+
+# Times
+HOUR (?:2[0123]|[01]?[0-9])
+MINUTE (?:[0-5][0-9])
+
+TIME_SECND (?:(?:[0-5]?[0-9]|60)(?:[:.,][0-9]+)?)
+ISO8601_MONTHNUM (?:0?[1-9]|1[0-2])
+ISO8601_MONTHDAY (?:(?:0[1-9])|(?:[12][0-9])|(?:3[01])|[1-9])
+ISO8601_YEAR (?>\d\d){1,2}
+ISO8601_HOUR (?:2[0123]|[01]?[0-9])
+ISO8601_MINUTE (?:[0-5][0-9])
+ISO8601_TIMEZONE (?:Z|[+-]%{HOUR}(?::?%{MINUTE}))
+ISO8601_SECOND (?:%{TIME_SECND}|60)
+ISO8601_TIMESTAMP %{ISO8601_YEAR}-%{ISO8601_MONTHNUM}-%{ISO8601_MONTHDAY}[T]%{ISO8601_HOUR}:?%{ISO8601_MINUTE}(?::?%{ISO8601_SECOND})?%{ISO8601_TIMEZONE}?
+DATETIME %{YEAR}-%{MONTHNUM}-%{MONTHDAY} %{HOUR}:%{MINUTE}:%{SECOND}

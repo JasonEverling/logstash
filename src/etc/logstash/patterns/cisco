@@ -1,0 +1,12 @@
+# Events
+CISCO_ASA_EVENTID %ASA-%{INT:[system][syslog][level][origin]}-%{POSINT:[system][syslog][classification][identifier]}
+CISCO_IOS_EVENTID %{DATA:[system][syslog][classification][text]}-%{INT:[system][syslog][level][origin]}-(?:%{GREEDYDATA:[system][syslog][classification][identifier]})
+
+# Timestamps
+CISCO_TIMESTAMP %{MONTH} %{MONTHDAY} %{YEAR} %{TIME}
+CISCO_IOS_TIMESTAMP %{TIME} %{WORD:Timezone} %{DAY} %{MONTH} %{MONTHDAY} %{YEAR}
+
+# Headers
+CISCO_HEADER %{CISCO_ASA_HEADER_ORIGINAL}|%{CISCO_ASAORIOS_HEDAER_FORWARDED5424}
+CISCO_ASA_HEADER_ORIGINAL %{SYSLOG5424PRI}(?:%{CISCO_TIMESTAMP:timestamp}: )%{CISCO_ASA_EVENTID:[system][syslog][classification][text]}:
+CISCO_ASAORIOS_HEDAER_FORWARDED5424 %{SYSLOG5424PRI}%{NONNEGINT} +(?:%{TIMESTAMP_ISO8601:syslog5424_ts}|-) +(?:%{HOSTNAME:[system][syslog][host][ip]}|-) +(?:%{CISCO_ASA_EVENTID:[system][syslog][classification][text]}|-) +(?:%{WORD:syslog5424_proc}|-) +(?:%{WORD:syslog5424_msgid}|-) +(?:%{SYSLOG5424SD:syslog5424_sd}|-|)
