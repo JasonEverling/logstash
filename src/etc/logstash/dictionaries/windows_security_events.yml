@@ -1,7 +1,9 @@
 #-------------------------------------------------------------------------------------------------------------------------------------
 # Windows event monitoring best practice
 #
-# Based on https://docs.microsoft.com/en-us/windows-server/identity/ad-ds/plan/security-best-practices/audit-policy-recommendations
+# Resources:
+# https://docs.microsoft.com/en-us/windows-server/identity/ad-ds/plan/security-best-practices/audit-policy-recommendations
+# https://docs.microsoft.com/en-us/windows-server/identity/ad-ds/plan/appendix-l--events-to-monitor
 #-------------------------------------------------------------------------------------------------------------------------------------
 
 "1102": "1102: MEDIUM - The audit log was cleared"
