@@ -1,0 +1,20 @@
+#################
+# Java Settings #
+#################
+
+# Memory
+-Xms8g
+-Xmx8g
+
+## Memory config
+-XX:+UseConcMarkSweepGC
+-XX:CMSInitiatingOccupancyFraction=75
+-XX:+UseCMSInitiatingOccupancyOnly
+-XX:+HeapDumpOnOutOfMemoryError
+
+# Opts
+-Djava.awt.headless=true
+-Dfile.encoding=UTF-8
+-Djruby.compile.invokedynamic=true
+-Djruby.jit.threshold=0
+-Djava.security.egd=file:/dev/urandom

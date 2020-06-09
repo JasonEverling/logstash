@@ -1,0 +1,67 @@
+# Logstash Settings
+#
+# ------------  Node identity ------------
+#
+# Use a descriptive name for the node:
+#
+# node.name: test
+# ------------ Data path ------------------
+#
+path.data: /var/lib/logstash
+#
+# ------------ Pipeline Settings --------------
+#
+# pipeline.id: main
+#
+pipeline.workers: 24
+#
+# ------------ Pipeline Configuration Settings --------------
+#
+# path.config:
+# config.string:
+# config.test_and_exit: false
+config.reload.automatic: true
+config.reload.interval: 5s
+# config.debug: false
+# config.support_escapes: false
+#
+# ------------ Queuing Settings --------------
+#
+# queue.type: memory
+#
+# path.queue:
+# queue.page_capacity: 64mb
+# queue.max_events: 0
+# queue.max_bytes: 1024mb
+# queue.checkpoint.acks: 1024
+# queue.checkpoint.writes: 1024
+# queue.checkpoint.interval: 1000
+#
+# ------------ Dead-Letter Queue Settings --------------
+#
+# dead_letter_queue.enable: false
+# dead_letter_queue.max_bytes: 1024mb
+#
+# path.dead_letter_queue:
+#
+# ------------ Metrics Settings --------------
+#
+http.host: "127.0.0.1"
+http.port: 9600-9700
+#
+# ------------ Debugging Settings --------------
+#
+# Options for log.level:
+#   * fatal
+#   * error
+#   * warn
+#   * info (default)
+#   * debug
+#   * trace
+#
+log.level: warn
+path.logs: /var/log/logstash
+#
+# ------------ Other Settings --------------
+# path.plugins: []
+#
